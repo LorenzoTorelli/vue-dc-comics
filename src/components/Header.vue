@@ -45,8 +45,6 @@ export default {
                 height: 120px;
                 display: flex;
                 align-items: center;
-
-
             }
 
             #nav-box {
@@ -64,11 +62,11 @@ export default {
                     list-style: none;
                     justify-content: space-between;
                     height: 100%;
-
+                    align-items: center;
 
                     li {
                         margin: 0px 5px;
-                        height: 100%;
+                        // height: 100%;
                         // margin-top: 40px;
                                                 
                         a {
