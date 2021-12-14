@@ -1,11 +1,11 @@
 <template>
     <section id="header">
         <div class="container">
-            <div id="img-box"><img src="../assets/img/dc-logo.png" alt="dc-logo"></div>
+            <div id="img-box"><img src="../assets/img/dc-logo.png" alt="dc-logo" @click="selected = 999"></div>
             <div id="nav-box">
                 <nav>
                     <ul>
-                        <li v-for= " (elemento,index) in menu" :key= "index"><a href="">{{elemento.nome}}</a></li>
+                        <li v-for= " (elemento,index) in menu" :key= "index" ><a @click="selected = index" :class="index==selected? 'active': '' " href="#">{{elemento.nome}}</a></li>
                     </ul>
                 </nav>
             </div>
@@ -20,42 +20,66 @@ export default {
         return {
             menu: [
             {
-                nome:'characters'
+                nome:'characters',
+                state:"true"
             },
             {
-                nome:'comics'
+                nome:'comics',
+                state:"false"
+              
             },
              {
-                nome:'movies'
+                nome:'movies',
+                state:"false"
             },
-             {
-                nome:'tv'
+                
+            {
+                nome:'tv',
+                state:"false"
             },
-             {
-                nome:'games'
+                
+            {
+                nome:'games',
+                state:"false"
             },
-             {
-                nome:'collectibles'
+                
+            {
+                nome:'collectibles',
+                state:"false"
             },
-             {
-                nome:'videos'
+                
+            {
+                nome:'videos',
+                state:"false"
             },
-             {
-                nome:'fans'
+                
+            {
+                nome:'fans',
+                state:"false"
             },
-             {
-                nome:'news'
+                
+            {
+                nome:'news',
+                state:"false"
             },
-             {
-                nome:'shop'
+                
+            {
+                nome:'shop',
+                state:"false"
             },
+                
             ],
+            selected: 999,
+        
         }
-    },
+
+        },
+
 }
 </script>
 
 <style lang="scss" scoped>
+
     #header {
         // padding: 15px 0px;
         // height: 120px;
@@ -72,6 +96,7 @@ export default {
                 height: 120px;
                 display: flex;
                 align-items: center;
+                cursor: pointer;
             }
 
             #nav-box {
@@ -90,7 +115,10 @@ export default {
                     justify-content: space-between;
                     height: 100%;
                     align-items: center;
-
+                    
+                    .active {
+                        color: #0c7cec;
+                        }
                     li {
                         margin: 0px 5px;
                         // height: 100%;
@@ -104,7 +132,11 @@ export default {
                         height: 100%;
                        
                        }
+                        a:hover {
+                            color: #0c7cec;
+                        }
                     }
+                   
                 }
                 }
                 

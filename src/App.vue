@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss">
 @import url('./assets/style/global.scss');
-  #app {
-    // max-width: 1200px;
-  }
+  // #app {
+  //   // max-width: 1200px;
+  // }
 </style>
